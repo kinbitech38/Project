@@ -65,7 +65,6 @@
 
 ## In case you want to change this behavior, you’ll need to edit the /etc/apache2/mods-enabled/dir.conf file and change the order in which the index.php file is listed within the DirectoryIndex directive
        'sudo vim /etc/apache2/mods-enabled/dir.conf'
-       
        '<IfModule mod_dir.c>
         #Change this:
         #DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
@@ -79,5 +78,7 @@
 ## This will open a blank file. Add the following text, which is valid PHP code, inside the file:
       '<?php'
       ' phpinfo();'
+## After checking the relevant information about your PHP server through that page, it’s best to remove the file you created as it contains sensitive information about your PHP environment -and your Ubuntu server. You can use rm to do so:
+       'sudo rm /var/www/projectlamp/index.php'
     
       
